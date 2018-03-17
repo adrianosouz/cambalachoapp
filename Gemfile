@@ -29,6 +29,12 @@ gem 'kaminari-i18n'
 gem 'ratyrate'
 # Ruby interface to the GraphViz graphing tool 
 gem 'ruby-graphviz'
+#A library for generating fake data such as names, addresses, and phone numbers.
+gem 'faker'
+#Markdown Lorem Ipsum gerador
+gem 'doctor_ipsum'
+#O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.
+gem 'lerolero_generator'
 
 source 'https://rails-assets.org' do
 #Bootbox
@@ -53,8 +59,6 @@ end
 gem 'faker'
 #Minimal authorization through OO design and pure Ruby classes
 gem 'pundit'
-#O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.
-gem 'lerolero_generator'
 #Integration of RubyMoney - Money with Rails
 gem 'money-rails'
 #Gerenciamento fácil de anexos de arquivos para o ActiveRecord
@@ -104,10 +108,6 @@ end
 group :development do
   #Catches mail and serves it through a dream.
   gem 'mailcatcher'
-  #A library for generating fake data such as names, addresses, and phone numbers.
-  gem 'faker'
-  #Markdown Lorem Ipsum gerador
-  gem 'doctor_ipsum'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   # Ferramenta remota de automação multi-servidor
@@ -126,7 +126,7 @@ end
 group :production do
   
 # MySQL Adapter
-gem 'mysql2','~> 0.3.18'
+gem 'mysql2',~> 0.3.18'
 
 end
 
