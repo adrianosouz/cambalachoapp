@@ -51,12 +51,8 @@ gem 'rails-assets-notifyjs'
 gem 'rails-assets-animate.css'
 # Marked
 gem 'rails-assets-marked'
-
-
 end
 
-#A library for generating fake data such as names, addresses, and phone numbers.
-gem 'faker'
 #Minimal authorization through OO design and pure Ruby classes
 gem 'pundit'
 #Integration of RubyMoney - Money with Rails
