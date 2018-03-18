@@ -31,7 +31,13 @@ class Ad < ActiveRecord::Base
   scope :by_category, -> (id, page) { where(category: id).page(page).per(6) }
 
 
-  scope :random, ->(quantity) {limit(quantity).order("RANDOM()")}
+  scope :random, ->(quantity){
+    Rails.env.production?
+      limit(quantity).order("RAND()") # MySQL
+    else
+      limit(quantity).order("RANDOM()") #SQL
+    end
+}
 
   # paperclip
   has_attached_file :picture, styles: { large: "800x300",medium: "320x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
