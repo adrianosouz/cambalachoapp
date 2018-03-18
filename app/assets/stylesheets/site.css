@@ -1,6 +1,9 @@
 /*
 *= require bootstrap
 */
+p#time-ago {
+    margin-bottom: -4px;
+}
 
 body {
 

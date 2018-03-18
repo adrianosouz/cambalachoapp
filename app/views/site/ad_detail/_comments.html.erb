@@ -1,15 +1,16 @@
- <% @ad.comments.each do |comment| %>
- <div class="row">
- 	<%= comment.member.email %>
- 	<span class="pull-right"> <%= time_ago_in_words(comment.created_at) %></span>
-        <p><%= comment.body %> </p>
+<% @ad.comments.each do |comment| %>
+    <div class="row">
+        <div class="col-md-12">
+            <% if (current_member) && (comment.member.id == current_member.id) %>
+                <%= rating_for_user @ad, current_member, 'quality', star_path: '/images/ratyrate' %>
+            <% end %>
 
-      <% if (current_member) && (comment.member.id == comment.member.id) %>
-     <%= rating_for_user @ad, current_member, 'quality', star_path: 'images/ratyrate' %>
-     <% end %>
-    
-   </div>
+            <p><%= comment.body %></p>
 
-   <hr>
-            
+            <p id="time-ago"><strong><%= comment.member.email %></strong></p>
+            <p><strong><%= time_ago_in_words(comment.created_at) %></strong></p>
+        </div>
+    </div>
+
+    <hr>
 <% end %>
