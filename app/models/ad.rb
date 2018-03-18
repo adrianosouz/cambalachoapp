@@ -35,7 +35,7 @@ class Ad < ActiveRecord::Base
     if Rails.env.production?
       limit(quantity).order("RAND()") # MySQL
     else
-      limit(quantity).order("RANDOM()") #SQL
+      limit(quantity).order("RANDOM()") #SQLFF
     end
 }
 
